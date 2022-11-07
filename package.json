@@ -1,0 +1,22 @@
+{
+  "name": "pta-tb-experiment",
+  "version": "1.0.0",
+  "description": "An experiment to see if we can combine Plain Text Accounting with TigerBeetle",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pondersource/pta-tb-experiment.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pondersource/pta-tb-experiment/issues"
+  },
+  "homepage": "https://github.com/pondersource/pta-tb-experiment#readme",
+  "dependencies": {
+    "pta-tools": "^1.5.2"
+  }
+}
