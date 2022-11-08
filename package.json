@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/pondersource/pta-tb-experiment#readme",
   "dependencies": {
-    "pta-tools": "^1.5.2"
+    "pta-tools": "^1.5.2",
+    "tigerbeetle-node": "^0.11.0"
   }
 }
