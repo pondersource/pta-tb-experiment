@@ -1,17 +1,6 @@
 # pta-tb-experiment
 An experiment to see if we can combine [Plain Text Accounting ("PTA")](https://plaintextaccounting.org/) with [TigerBeetle (TB)](https://tigerbeetle.com/)
 
-## Run
-
-```
-# provision TigerBeetle's data directory
-./format.sh
-# run TigerBeetle
-./start.sh
-# import a Plain Text Accounting journal
-node index.mjs ./sample.journal ./dictionary.json
-
-
 ## Conclusions from the experiment
 
 ### 1. mapping account names
@@ -33,3 +22,15 @@ things like currency, comments, full account names, etc. So you would always nee
 
 ### 5. Finding back the data you wrote into TB
 I create transfers with consecutive id's starting from zero, so then you can just [read back all first n entries](https://github.com/pondersource/pta-tb-experiment/blob/main/index.mjs#L146-L148) or just [read back all entries in batches until you find a gap](https://github.com/pondersource/pta-tb-experiment/blob/e0179ee367cf0267e7295029c8be5c6a8410b2dc/test.mjs#L74-L86). I later switched so using the account name from 1. as the account id, to simplify transfer creation, and that means that there is no way to read them back, pending https://github.com/tigerbeetledb/tigerbeetle/issues/28.
+
+
+## Run
+
+```
+# provision TigerBeetle's data directory
+./format.sh
+# run TigerBeetle
+./start.sh
+# import a Plain Text Accounting journal
+node index.mjs ./sample.journal ./dictionary.json
+```
