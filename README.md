@@ -6,10 +6,10 @@ An experiment to see if we can combine [Plain Text Accounting ("PTA")](https://p
 ### 1. mapping account names
 
 I used a dictionary to encode PTA accounts to TB accounts. For instance
-`assets:bank:checking` becomes `BigInt("1" + "000" + "001" + "002")`. This works as long as accounts are not nested deeper than 12 levels (contain no more than 11 `:` characters) and as long as there are no more than 1000 different words used to compose them (the words in `dictionary.json`).
+`assets:bank:checking` becomes `BigInt("1" + "000" + "001" + "002")`. This works as long as accounts are not nested deeper than 12 levels (contain no more than 11 `':'` characters) and as long as there are no more than 1000 different words used to compose them (the words in `dictionary.json`).
 This could be optimized some more (the current code doesn't add unknown words to the dictionary).
 
-### 2. Comments cannot be store
+### 2. Comments cannot be stored
 There is not enough room in UserData to store the comments from a PTA journal, including the quite essential comments in posting headers.
 the UserData of a TB transfer is 16 bytes, so with Huffman Coding you could store probably about 40 characters in it. If need be you could add a second (zero-amount) transfer with the rest of the comment.
 
