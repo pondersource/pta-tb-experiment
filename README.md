@@ -1,5 +1,5 @@
 # pta-tb-experiment
-An experiment to see if we can combine [Plain Text Accounting ("PTA")](https://plaintextaccounting.org/) with [TigerBeetle (TB)](https://tigerbeetle.com/)
+An experiment to see if we can combine [Plain Text Accounting ("PTA")](https://plaintextaccounting.org/) with [TigerBeetle ("TB")](https://tigerbeetle.com/)
 
 ## Conclusions from the experiment
 
