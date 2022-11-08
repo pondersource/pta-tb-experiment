@@ -8,7 +8,6 @@ import {
   TransferFlags,
 } from 'tigerbeetle-node';
 import { argv, exit } from 'process';
-import { createAccountErrorToString, createTransferErrorToString } from './errorCodeToString.mjs';
 
 function accountStringToUserData(str, dictionary) {
   const parts = str.split(":");
@@ -62,7 +61,7 @@ async function createAccounts(names, dictionary, client) {
     }
   }));
   console.log("accounts created", errors.map(obj => {
-    return `${obj.index}: ${obj.code} - ${createAccountErrorToString(obj.code)}`;
+    return `${obj.index}: ${obj.code} - ${CreateAccountError[obj.code]}`;
   }));
   let readBack = await client.lookupAccounts(names.map((name) => accountStringToUserData(name, dictionary)));
   names.forEach((name) => {
@@ -142,7 +141,7 @@ async function createTransfers(journal, dictionary, client) {
   });
   let errors = await client.createTransfers(transferData.map((data) => makeTransfer(data, dictionary)));
   console.log("transfers created", errors, errors.map(obj => {
-    return `${obj.index}: ${obj.code} - ${createTransferErrorToString(obj.code)}`;
+    return `${obj.index}: ${obj.code} - ${CreateTransferError[obj.code]}`;
   }));
   const range = [...Array(transferData.length).keys()].map(x => BigInt(x + 1));
   console.log("reading back", transferData, range);
